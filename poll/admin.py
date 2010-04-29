@@ -5,4 +5,4 @@ from content.admin import ModelBaseAdmin
 
 
 admin.site.register(Poll, ModelBaseAdmin)
-admin.site.register(PollOption, ModelBaseAdmin)
+admin.site.register(PollOption)
