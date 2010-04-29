@@ -6,7 +6,7 @@ from content.models import ModelBase
 class Poll(ModelBase):
     content = models.ManyToManyField(
         ModelBase,
-        related_name='related_content'
+        related_name='poll_content'
     )
     
     class Meta:
@@ -19,9 +19,12 @@ class PollOption(models.Model):
     )
     poll = models.ForeignKey(
         Poll,
-        related_name='options'
+        related_name='poll_options'
     )
-    content = models.ForeignKey(ModelBase)
+    content = models.ForeignKey(
+        ModelBase,
+        related_name='content_option'
+    )
     correct_answer = models.BooleanField()
 
     class Meta:
